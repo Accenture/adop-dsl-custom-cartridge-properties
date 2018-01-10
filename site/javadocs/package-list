@@ -1,0 +1,5 @@
+pluggable.configuration
+pluggable.scm
+pluggable.scm.bitbucket
+pluggable.scm.gerrit
+pluggable.scm.helpers

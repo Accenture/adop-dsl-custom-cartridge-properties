@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MultiLineStringPropertiesTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-01-10T12:52:12" hostname="CPX-9N6QGF39KOS" time="0.109">
-  <properties/>
-  <testcase name="testGetScmType" classname="MultiLineStringPropertiesTest" time="0.109"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

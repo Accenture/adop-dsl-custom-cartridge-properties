@@ -32,7 +32,7 @@ buildLibrary.with{
     }
 	properties {
 		copyArtifactPermissionProperty {
-			projectNames('ADOP_DSL_Cartridge_Custom_Properties_Deploy')
+			projectNames('ADOP_DSL_Cartridge_Custom_Properties_Library_Deploy')
 		}
 	}
 	label('docker')
@@ -58,7 +58,7 @@ chmod +x gradlew
 	publishers {
 		archiveArtifacts("**/*")
 			downstreamParameterized {
-				trigger(projectFolderName + "/ADOP_DSL_Cartridge_Custom_Properties_Deploy") {
+				trigger(projectFolderName + "/ADOP_DSL_Cartridge_Custom_Properties_Library_Deploy") {
 					condition("UNSTABLE_OR_BETTER")
 					parameters {
 						predefinedProp("B", '${BUILD_NUMBER}')
@@ -73,7 +73,7 @@ setupLibrary.with{
 	description('This job deploys the ADOP DSL Cartridge_Custom_Properties library into the Jenkins library additional classpath location.')
 	parameters {
         stringParam("B", '', "Parent build number.")
-        stringParam("PARENT_BUILD", "ADOP_DSL_Common_Library_Build", "Parent build name.")
+        stringParam("PARENT_BUILD", "ADOP_DSL_Cartridge_Custom_Properties_Library_Build", "Parent build name.")
     }
 	label('docker')
     environmentVariables {

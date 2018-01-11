@@ -1,4 +1,4 @@
-package adop.cartridge.exceptions;
+package adop.cartridge.properties.exceptions;
 
 public class MissingPropertyException extends Exception{
     

@@ -37,6 +37,24 @@ public class CartridgeProperties {
     }
     
     /**
+    * @param key key of property retrieve.
+    * @param defaultValue default value to return if property for key is missing.
+    * @return property, if key exists else return default.
+    **/
+    public String getProperty(String key, String defaultValue){
+
+        if(key == null){
+            throw new IllegalArgumentException("Key cannot be null.");
+        }
+
+        if(!this.hasProperty(key)){
+            return defaultValue;
+        }else{
+            return this.properties.getProperty(key);
+        }
+    }
+    
+    /**
     * @param key key to lookup.
     * @return true if properties exists else false.
     **/

@@ -37,4 +37,9 @@ public class MultiLineStringPropertiesTest extends GroovyTestCase {
           cartridgeProperties.getProperty(null);
       }
   }
+    
+  public void testGetDefaultPropertyForKeyThatDoesNotExist(){
+      CartridgeProperties cartridgeProperties = new CartridgeProperties("sonar.projectKey=adop\r\nopenshift.env=dev");
+      assertEquals  "default", cartridgeProperties.getProperty("openshift.env.prod", "default");
+  }  
 }

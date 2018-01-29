@@ -43,15 +43,11 @@ public class CartridgeProperties {
     **/
     public String getProperty(String key, String defaultValue){
 
-        if(key == null){
-            throw new IllegalArgumentException("Key cannot be null.");
+        if(key == null || defaultValue == null){
+            throw new IllegalArgumentException("Arguments cannot be null.");
         }
-
-        if(!this.hasProperty(key)){
-            return defaultValue;
-        }else{
-            return this.properties.getProperty(key);
-        }
+        
+        return !this.hasProperty(key) ? defaultValue : this.getProperty(key);
     }
     
     /**

@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Properties;
 import adop.cartridge.properties.exceptions.*;
+import java.lang.IllegalArgumentException;
 
 public class CartridgeProperties {
     
@@ -64,11 +65,16 @@ public class CartridgeProperties {
     * @param properties properties seperated by \r\n.
     **/
     private void loadProperties(String properties){
-        String[] lines = properties.split(LINE_ENDINGS_REGEX);
-        
-        for(line in lines){
-            String[] property = line.split(PROPERTY_DELIMITER);
-            this.properties.setProperty(property[0],property[1]); 	
+        if (!properties.equals("") {   
+            String[] lines = properties.split(LINE_ENDINGS_REGEX);
+            for(line in lines){
+                String[] property = line.split(PROPERTY_DELIMITER);
+                if (property.length == 2) {
+                    this.properties.setProperty(property[0],property[1]); 	
+                } else {
+                    throw new IllegalArgumentException( "line is not key value pair: " + line)
+                }
+            }
         }
     }
 }
